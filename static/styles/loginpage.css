@@ -1,0 +1,59 @@
+body {
+    background-color: #c72229;
+    font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+    font-size: smaller;
+    text-align: center;
+    color: white;
+}
+
+.logo{
+    width: 90%;
+}
+
+.flex-container{
+    height: max-content;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+} */
+
+.num-field{
+  width: 99%;
+  border: none;
+  border-bottom: 1px solid #D3D3D3;
+  text-align: center;
+  background: none;
+  color: #D3D3D3;
+}
+
+.submit-btn{
+  width: max-content;
+  margin: 0 auto;
+}
+
+input[type='submit']{
+    color: #D3D3D3;
+    border-radius: 24px;
+    padding: 0 10px;
+    border: none;
+    /* background-image: linear-gradient(to bottom right, #E9C551, #ed7229); */
+    background: #ed7229;
+}
+
+
+.otp-digit{
+  width: 18%;
+  border: none;
+  border-radius: 6px;
+  margin: 0 6px;
+  padding: 10px;
+  text-align: center;
+  background: #e15158;
+  color: #fff;
+}

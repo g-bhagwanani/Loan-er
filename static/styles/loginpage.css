@@ -91,3 +91,11 @@ ul{
     display: block;
     width: 100%;
 }
+
+input {
+    outline: none;
+}
+
+input:invalid {
+    box-shadow:none;
+}

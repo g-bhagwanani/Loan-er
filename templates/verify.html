@@ -21,10 +21,10 @@
     <img src="{{ url_for('static',filename='images/ABC_Birla.jpg') }}" class="img-fluid logo mx-auto d-block" alt="image">
 
     <div class = "flex-container container">
-        <p>
+        <p class = "animated fadeIn">
             Enter the OTP that was sent to your mobile number
         </p>
-        <form action="/verify" method="post">
+        <form action="/verify" method="post" class = "animated fadeIn">
             <div class = "row justify-content-around" class = "flex">
                 <input type="text" placeholder="" maxlength="1" name="otp-1" value="" class = "otp-digit col-2">
                 <input type="text" placeholder="" maxlength="1" name="otp-2" value="" class = "otp-digit col-2">
@@ -41,10 +41,10 @@
         <div class="container">
             <ul class="list-unstyled list-inline text-center py-2">
                 <li class="list-inline-item px-2">
-                    <button type="button" class="btn btn-warning btn-rounded" onclick = "window.location.href='/'">Change number</button>
+                    <button type="button" class="btn btn-warning btn-rounded animated slideInLeft" onclick = "window.location.href='/'">Change number</button>
                 </li>
                 <li class="list-inline-item px-3">
-                    <button type="button" class="btn btn-warning btn-rounded" onclick = "resendOtp()">Resend OTP</button>
+                    <button type="button" class="btn btn-warning btn-rounded animated slideInRight" onclick = "resendOtp()">Resend OTP</button>
                 </li>
 
             </ul>

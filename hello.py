@@ -17,17 +17,18 @@ headers = {
 #method to send otp
 @app.route('/resend-otp')
 def sendSMS():
-    apikey = 'pIyBJ6pdYX8-bGlGy8HXMOL0FG6RGYRo4jZ6W1A0Qf'
+    #apikey = 'pIyBJ6pdYX8-bGlGy8HXMOL0FG6RGYRo4jZ6W1A0Qf'
     numbers = '91' + number
     global otp
-    otp = str(random.randint(1000, 9999))
+    #otp = str(random.randint(1000, 9999))
+    otp = '4151'
     #send otp to the Number
-    data =  urllib.parse.urlencode({'apikey': apikey, 'numbers': numbers,
+    '''data =  urllib.parse.urlencode({'apikey': apikey, 'numbers': numbers,
         'message' : "Your ABFL OTP is " + otp})
     data = data.encode('utf-8')
     request = urllib.request.Request("https://api.textlocal.in/send/?")
     f = urllib.request.urlopen(request, data)
-    fr = f.read()
+    fr = f.read()'''
     #console.log(fr)
 
     return redirect(url_for('get_otp'))

@@ -1,0 +1,107 @@
+body, .botui-message-content {
+  font-family: Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+  font-size: larger;
+}
+
+.header, .footer{
+  position: fixed;
+  left: 0;
+  width: 100%;
+
+}
+
+.footer {
+  bottom: 0;
+  padding: 10px 5px;
+  /* temp */
+  /* border: 2px solid red; */
+}
+
+.header {
+  top: 0;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  background: #c72229;
+}
+
+#my-botui-app {
+  padding-top: 40px;
+}
+
+.botui-message-content {
+  font-size: small;
+}
+
+.yes-no{
+  padding: 20px;
+}
+
+#yes, #no{
+  border-radius: 20px;
+  background: #c72229;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+}
+
+.botui-actions-text{
+  position: fixed;
+  bottom: 0;
+}
+
+/* .amount-ip{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 2px;
+  color: black;
+}
+
+.amount-ip::-webkit-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #c72229;
+  outline: none;
+}
+
+.amount-ip::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #c72229;
+  border: none;
+} */
+
+#text-ip{
+  padding: 0 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 85%;
+}
+
+.fa-paper-plane, .prog-icons{
+  color: #c72229;
+}
+
+.prog-img{
+  width: 70%;
+}
+
+.steps{
+  text-align: center;
+  padding: 5px 0 0 0;
+}
+
+.progress{
+  margin-top: 5px;
+  height: 10px;
+}
+
+.progress-bar{
+  width: 1%;
+  background-color: #c72229;
+}

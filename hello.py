@@ -1,9 +1,10 @@
-from flask import Flask, redirect, url_for, request ,render_template
+from flask import Flask, redirect, url_for, request ,render_template, flash
 import urllib.request
 import urllib.parse
 import random
 
 app = Flask(__name__)
+app.secret_key = 'my unobvious secret key'
 
 otp = '0'
 number = '0'
@@ -19,6 +20,9 @@ headers = {
 def sendSMS():
     #apikey = 'pIyBJ6pdYX8-bGlGy8HXMOL0FG6RGYRo4jZ6W1A0Qf'
     numbers = '91' + number
+
+    #send no to db
+
     global otp
     #otp = str(random.randint(1000, 9999))
     otp = '4151'
@@ -30,7 +34,6 @@ def sendSMS():
     f = urllib.request.urlopen(request, data)
     fr = f.read()'''
     #console.log(fr)
-
     return redirect(url_for('get_otp'))
 
 #login page on startup
@@ -61,10 +64,16 @@ def verify_otp():
         otp3 = request.form['otp-3']
         otp4 = request.form['otp-4']
         otpp = otp1 + otp2 + otp3 + otp4
+        # return (otpp + otp)
         if otpp == otp:
-            return 'Successfully registered with number %s' % number
+            return redirect(url_for('chat_interface'))
         else:
-            return 'Incorrect otp'
+            return redirect(url_for('get_otp'))
+
+#the main chat interface
+@app.route('/chat')
+def chat_interface():
+    return render_template('chat.html')
 
 if __name__ == '__main__':
     app.run(debug = True)

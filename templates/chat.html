@@ -10,21 +10,22 @@
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
 
     <!--    default theme - you can create your own theme-->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/chat.css') }}">
-
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/chat.css') }}">
+
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/slider.css') }}"> -->
 
 </head>
 <body>
 
     <div class = "container header">
       <div class="row">
-        <i class="fa fa-robot col-3"></i>
+        <i class="fa fa-robot fa-lg col-3"></i>
         <div class="col-6">Loan-er</div>
-        <i class="fa fa-phone col-3"></i>
+        <i class="fa fa-phone fa-lg col-3"></i>
       </div>
     </div>
 
@@ -135,14 +136,58 @@
       </div>
     </div>
 
-    <div class="slider-input">
+    <!-- <div class="slider-input">
       <input type="range" min="1" max="100" name="" value="50" class = "amount-ip">
       <p id = "val">0</p>
+    </div> -->
+
+    <!-- KD's code -->
+
+    <div class="amt-ip">
+      <div class="card">
+        <span class = "rt" id = "emi">EMI: &#8377</span>
+        <span class = "rt" id = "dur">Duration: 18 months</span><br>
+        <div class="slidecontainer">
+          <input type="range" min="12" max="36" value="18" class="slider" id="myRange">
+        </div>
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-3">
+              12
+            </div>
+            <div class="col-3 rt">
+              36
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <button type="button" class="btn btn-success rt" onclick = "send_duration()">Done</button>
+    </div>
+
+    <!-- KD's code ends -->
+
+    <!-- <input type="file" accept="image/*" capture="camera">
+    <input type="file" accept="image/*"> -->
+
+    <div class="container cam-gallery">
+      <div class="row align-items-center justify-content-around">
+        <div class="col-4" id = "cam">
+          <label for="cam-hidden"><i class="fas fa-camera fa-2x"></i></label>
+          <input type="file" accept="image/*" capture="camera" id = "cam-hidden" oninput="cam_send()">
+        </div>
+        <div class="col-4" id = "gallery">
+          <label for="gallery-hidden"><i class="fas fa-images fa-2x"></i></label>
+          <input type="file" accept="image/*" id = "gallery-hidden" oninput="gallery_send()">
+        </div>
+      </div>
     </div>
 
     <div class = footer>
-      <input type="text" id = "text-ip" placeholder = "Talk to Loan-er" value="">
-      <i class="fa fa-lg fa-paper-plane" id = "send-button"></i>
+      <div class="send-box">
+        <input type="text" id = "text-ip" placeholder = "Talk to Loan-er" value="">
+        <i class="fa fa-lg fa-paper-plane" id = "send-button"></i>
+      </div>
       <!-- <img src="{{ url_for('static',filename='images/send-button.jpg') }}" id = "send-button"> -->
       <div class="steps container">
         <div class="row">

@@ -59,18 +59,20 @@ function cam_send(){
   fileObj = $('#cam-hidden')[0].files[0];
   const objectURL = window.URL.createObjectURL(fileObj);
   console.log(objectURL);
+
   $('.cam-gallery').hide();
   $('.send-box').show();
-  human_img(objectURL);
+  human_img(objectURL, fileObj.toString());
 }
 
 function gallery_send(){
   fileObj = $('#gallery-hidden')[0].files[0];
   const objectURL = window.URL.createObjectURL(fileObj);
   console.log(objectURL);
+
   $('.cam-gallery').hide();
   $('.send-box').show();
-  human_img(objectURL);
+  human_img(objectURL, fileObj);
 }
 
 function duration(){
@@ -111,6 +113,19 @@ function human_txt(msg){
     content: msg
   });
   //insert logic to send msg to dialogflow
+  send_to_server(msg);
+
+}
+
+function human_img(src, obj){
+  botui.message.human({
+    type: 'embed',
+    content: src
+  });
+  send_to_server('xyz', true);
+}
+
+function send_to_server(msg, is_img=false){
     var url = window.location.href;
     url = url.slice(0,url.length-5)+'/myapi';
 
@@ -153,17 +168,11 @@ function human_txt(msg){
         }
     };
     xhttp.open("POST", url, true);
+    if(is_img)
+        xhttp.setRequestHeader('file_type','image')
     xhttp.send(msg);
+
     console.log('Some shit');
-
-
-}
-
-function human_img(src){
-  botui.message.human({
-    type: 'embed',
-    content: src
-});
 }
 
 function progress(){

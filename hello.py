@@ -128,8 +128,8 @@ def get_fulfillment_texts(message, project_id):
         query_input = dialogflow.types.QueryInput(text=text_input)
         response = session_client.detect_intent(session=session,
                                                 query_input=query_input)
-        print('RESPONSE')
-        pprint(response)
+        # print('RESPONSE')
+        # pprint(response)
 
     if response:
         fulfillment_msg = response.query_result.fulfillment_text
@@ -207,7 +207,7 @@ check=False
 def myapi():
     global check
     import requests
-    key,filename='',''
+    key,filename,message='','',''
     count=1
 
     #This jugaad ensures that the POST request sent by Dialogflow is not processed
@@ -215,7 +215,10 @@ def myapi():
         check=True
         req = request.get_data() #message received through user's post request
         # req = request.get_json(force=True)
+        print('data',req)
         print(request.files)
+        # print(request.headers.get('Content-Type'))
+        # print('image' not in request.headers.get('Content-Type'))
         if not request.files:
             message = bytes.decode(req)
         else:
@@ -238,10 +241,10 @@ def myapi():
                 message = bytes.decode(req)
             else:
                 message = request.files['media'].filename
-            pass
+
         project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
         language_code = get_language_code(message)
-
+        filename = '{}_{}.jpg'.format(token_hex(8),count)
         if language_code == 'hi':
             message = translator.translate(message, src='hi', dest='en').text
 
@@ -294,32 +297,37 @@ def myapi():
             user_data['pan'] = pan
 
         elif intent_name=='PAN pic upload':
-            upload_pic(filename)
+            # upload_pic(filename)
             user_data['pan_photo'] = filename
             count += 1
-            os.remove(filename)
+            # os.remove(filename)
 
         elif intent_name=='Aadhar number':
             print('aadhar is',str(int(response.query_result.output_contexts[-1].parameters['aadhar'])))
             user_data['aadhar_no'] = str(int(response.query_result.output_contexts[-1].parameters['aadhar']))
 
         elif intent_name=='Aadhar pic front':
-            upload_pic(filename)
+            # upload_pic(filename)
             user_data['aadhar_pic1'] = filename
             count += 1
-            os.remove(filename)
+            # os.remove(filename)
 
         elif intent_name=='Aadhar pic back':
-            upload_pic(filename)
+            # upload_pic(filename)
             user_data['aadhar_pic2'] = filename
-            os.remove(filename)
+            # os.remove(filename)
             pattern = re.compile(r'XXXX')
-            indices = [m.span() for m in re.finditer(pattern,fulfillment_msg[0])]
-            credit_score = db.collection(u'credit_score_data').document(document_name).get().to_dict().get('credit_score')
+            indices = [m.span() for m in re.finditer(pattern,fulfillment_msg[0]['text']['text'][0])]
+            indices = indices[0]
+            # credit_score = db.collection(u'credit_score_data').document(document_name).get().to_dict().get('credit_score')
+            credit_ref = db.collection(u'credit_score_data')
+            query_result1 = credit_ref.where('pan',u'==',user_data['pan']).get()
+            for i in query_result1:
+                credit_score = i.to_dict()['credit_score']
             if credit_score < 500:
                 loaner = 0
             else:
-                loaner = ((credit_score-500)/400)*int(user['loan_amt'])
+                loaner = ((credit_score-500)/400)*int(user_data['loan_amt'])
             first_part = fulfillment_msg[0]['text']['text'][0][:indices[0]]
             latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
             fulfillment_msg[0]['text']['text'][0] = first_part+str(loaner)+latter_part

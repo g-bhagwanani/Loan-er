@@ -164,7 +164,7 @@ function send_to_server(msg, is_img=false){
                             get_number();
                             break;
                         case 'loan period':
-                            // remove_number();
+                            remove_number();
                             duration();
                             break;
                         case 'Aadhar number':
@@ -214,6 +214,10 @@ function progress(){
       elem[0].style.width = width + '%';
     }
   }
+}
+
+function call(){
+    location.href = "tel:7021243864";
 }
 
 $("#myRange").on('input', function(){

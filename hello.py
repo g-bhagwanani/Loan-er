@@ -187,6 +187,12 @@ def get_language_code(message):
         pass
     return language_code
 
+def calc_emi(amount, duration):
+    interest = duration - 2
+    from math import ceil
+    return ceil(amount*(1+interest/100)/duration)
+
+
 def upload_pic(pic_name):
     from firebase import firebase
     firebase = firebase.FirebaseApplication('https://cabot-xuhseu.firebaseio.com')
@@ -331,6 +337,19 @@ def myapi():
             first_part = fulfillment_msg[0]['text']['text'][0][:indices[0]]
             latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
             fulfillment_msg[0]['text']['text'][0] = first_part+str(loaner)+latter_part
+
+            pattern = re.compile(r'YY')
+            indices = [m.span() for m in re.finditer(pattern,fulfillment_msg[0]['text']['text'][0])]
+            indices = indices[0]
+            first_part = fulfillment_msg[0]['text']['text'][0][:indices[0]]
+            latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
+            fulfillment_msg[0]['text']['text'][0] = first_part+str(user_data['loan_duration'])+latter_part
+            pattern = re.compile(r'ZZZZ')
+            indices = [m.span() for m in re.finditer(pattern,fulfillment_msg[0]['text']['text'][0])]
+            indices = indices[0]
+            first_part = fulfillment_msg[0]['text']['text'][0][:indices[0]]
+            latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
+            fulfillment_msg[0]['text']['text'][0] = first_part+str(calc_emi(user_data['loan_amt'],user_data['loan_duration']))+latter_part
 
         elif intent_name=='Loan approved - yes':
 

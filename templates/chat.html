@@ -20,167 +20,177 @@
 
 </head>
 <body>
-
-    <div class = "container header">
-      <div class="row">
-        <i class="fa fa-robot fa-lg col-3"></i>
-        <div class="col-6">Loan-er</div>
-        <i class="fa fa-phone fa-lg col-3"></i>
-      </div>
-    </div>
-
-    <div id="my-botui-app">
-        <bot-ui></bot-ui>
-    </div>
-
-    <div class="container yes-no">
-      <div class="row align-items-center justify-content-around">
-        <div class="col-4" id = "yes">
-           <i class="fa fa-thumbs-up fa-2x like"></i>
-        </div>
-        <div class="col-4" id = "no">
-           <i class="fa fa-thumbs-down fa-2x like"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- <button onclick="move()">Click Me</button> -->
-    <button type="button" class="btn btn-info btn-lg temp" data-toggle="modal" data-target="#terms">T&C's</button>
-    <div id="terms" class = "modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>Terms and Conditions</h3>
-          </div>
-          <div class="modal-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div class="foot-less">
+        <div class = "container header">
+          <div class="row">
+            <i class="fa fa-robot fa-lg col-3"></i>
+            <div class="col-6">Loan-er</div>
+            <i class="fa fa-phone fa-lg col-3"></i>
           </div>
         </div>
-      </div>
-    </div>
 
-    <button type="button" class="btn btn-info btn-lg temp" data-toggle="modal" data-target="#faqs">FAQs</button>
-    <div id="faqs" class = "modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3>Frequently Asked Questions</h3>
-          </div>
-          <div class="modal-body">
-            <ol>
-              <li>
-                <b>Who can apply for the loans?</b>
-                <br>
-                Proprietorship, Partnership, Public and Private Limited Companies
-              </li>
-              <li>
-                <b>How soon will I get the loan?</b>
-                <br>
-                A loan is generally disbursed within 7-10 working days after the submission of complete and correct documents.
-              </li>
-              <li>
-                <b>What are my loan tenure options?</b>
-                <br>
-                ABFL provides both short term and long term loans based on the business requirement of the client. This may range from 3 months to 12 years.
-              </li>
-              <li>
-                <b>How much processing fee would I have to pay?</b>
-                <br>
-                Processing fee will vary from customer to customer upto 2%.
-              </li>
-              <li>
-                <b>What are my various loan repayment options?</b>
-                <br>
-                You can repay through RTGS, NACH or through a cheque favouring Aditya Birla Finance Limited.
-              </li>
-              <li>
-                <b>Can I directly deposit / withdraw cash from the loan account?</b>
-                <br>
-                No, you cannot directly deposit / withdraw cash from the loan account. All transactions can be carried out only through cheque / ECS / NEFT / RTGS.
-              </li>
-              <li>
-                <b>Can I apply for an overdraft facility?</b>
-                <br>
-                ABFL can help the customer avail Overdraft facility through its partner banks.
-              </li>
-              <li>
-                <b>Can I prepay my loan? If yes, what are the charges involved?</b>
-                <br>
-                Yes, the loan can be prepaid. Please note that prepayment charges may be applicable.
-              </li>
-              <li>
-                <b>Do I receive a tax benefit from the loan?</b>
-                Interest paid on the loan is a tax deductible expense.
-                <br>
-              </li>
-              <li>
-                <b>Can I use the loan for any other purpose?</b>
-                <br>
-                Loans can be used only for the purpose mentioned in the offer document.
-              </li>
-              <li>
-                <b>How can I pay the processing fee?</b>
-                <br>
-                You can pay the processing fee through cheque / NEFT / RTGS facility.
-              </li>
-            </ol>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+        <div id="my-botui-app">
+            <bot-ui></bot-ui>
         </div>
-      </div>
-    </div>
 
-    <!-- <div class="slider-input">
-      <input type="range" min="1" max="100" name="" value="50" class = "amount-ip">
-      <p id = "val">0</p>
-    </div> -->
-
-    <!-- KD's code -->
-
-    <div class="amt-ip">
-      <div class="card">
-        <span class = "rt" id = "emi">EMI: &#8377</span>
-        <span class = "rt" id = "dur">Duration: 18 months</span><br>
-        <div class="slidecontainer">
-          <input type="range" min="12" max="36" value="18" class="slider" id="myRange">
-        </div>
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-3">
-              12
+        <div class="container yes-no">
+          <div class="row align-items-center justify-content-around">
+            <div class="col-4" id = "yes">
+               <i class="fa fa-thumbs-up fa-2x like"></i>
             </div>
-            <div class="col-3 rt">
-              36
+            <div class="col-4" id = "no">
+               <i class="fa fa-thumbs-down fa-2x like"></i>
             </div>
           </div>
         </div>
-      </div>
-      <br>
-      <button type="button" class="btn btn-success rt" onclick = "send_duration()">Done</button>
-    </div>
 
-    <!-- KD's code ends -->
-
-    <!-- <input type="file" accept="image/*" capture="camera">
-    <input type="file" accept="image/*"> -->
-
-    <div class="container cam-gallery">
-      <div class="row align-items-center justify-content-around">
-        <div class="col-4" id = "cam">
-          <label for="cam-hidden"><i class="fas fa-camera fa-2x"></i></label>
-          <input type="file" accept="image/*" capture="camera" id = "cam-hidden" oninput="cam_send()">
+        <!-- <button onclick="move()">Click Me</button> -->
+        <button type="button" class="btn btn-info btn-lg temp" data-toggle="modal" data-target="#terms">T&C's</button>
+        <div id="terms" class = "modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Terms and Conditions</h3>
+              </div>
+              <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-4" id = "gallery">
-          <label for="gallery-hidden"><i class="fas fa-images fa-2x"></i></label>
-          <input type="file" accept="image/*" id = "gallery-hidden" oninput="gallery_send()">
+
+        <button type="button" class="btn btn-info btn-lg temp" data-toggle="modal" data-target="#faqs">FAQs</button>
+        <div id="faqs" class = "modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Frequently Asked Questions</h3>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>
+                    <b>Who can apply for the loans?</b>
+                    <br>
+                    Proprietorship, Partnership, Public and Private Limited Companies
+                  </li>
+                  <li>
+                    <b>How soon will I get the loan?</b>
+                    <br>
+                    A loan is generally disbursed within 7-10 working days after the submission of complete and correct documents.
+                  </li>
+                  <li>
+                    <b>What are my loan tenure options?</b>
+                    <br>
+                    ABFL provides both short term and long term loans based on the business requirement of the client. This may range from 3 months to 12 years.
+                  </li>
+                  <li>
+                    <b>How much processing fee would I have to pay?</b>
+                    <br>
+                    Processing fee will vary from customer to customer upto 2%.
+                  </li>
+                  <li>
+                    <b>What are my various loan repayment options?</b>
+                    <br>
+                    You can repay through RTGS, NACH or through a cheque favouring Aditya Birla Finance Limited.
+                  </li>
+                  <li>
+                    <b>Can I directly deposit / withdraw cash from the loan account?</b>
+                    <br>
+                    No, you cannot directly deposit / withdraw cash from the loan account. All transactions can be carried out only through cheque / ECS / NEFT / RTGS.
+                  </li>
+                  <li>
+                    <b>Can I apply for an overdraft facility?</b>
+                    <br>
+                    ABFL can help the customer avail Overdraft facility through its partner banks.
+                  </li>
+                  <li>
+                    <b>Can I prepay my loan? If yes, what are the charges involved?</b>
+                    <br>
+                    Yes, the loan can be prepaid. Please note that prepayment charges may be applicable.
+                  </li>
+                  <li>
+                    <b>Do I receive a tax benefit from the loan?</b>
+                    Interest paid on the loan is a tax deductible expense.
+                    <br>
+                  </li>
+                  <li>
+                    <b>Can I use the loan for any other purpose?</b>
+                    <br>
+                    Loans can be used only for the purpose mentioned in the offer document.
+                  </li>
+                  <li>
+                    <b>How can I pay the processing fee?</b>
+                    <br>
+                    You can pay the processing fee through cheque / NEFT / RTGS facility.
+                  </li>
+                </ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <!-- <div class="slider-input">
+          <input type="range" min="1" max="100" name="" value="50" class = "amount-ip">
+          <p id = "val">0</p>
+        </div> -->
+
+        <!-- KD's code -->
+
+        <div class="amt-ip">
+          <div class="card">
+            <span class = "rt" id = "emi"></span>
+            <span class = "rt" id = "dur">Duration: 18 months</span><br>
+            <div class="slidecontainer">
+              <input type="range" min="12" max="36" value="18" class="slider" id="myRange">
+            </div>
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-3">
+                  12
+                </div>
+                <div class="col-3 rt">
+                  36
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button type="button" class="btn btn-success rt" onclick = "send_duration()">Done</button>
+        </div>
+
+        <div class="bank-ip">
+          <div class="card">
+              <input type="text" placeholder="Bank Account number" id = "acc-no">
+              <input type="text" placeholder="IFSC Code" id = "ifsc">
+          </div>
+          <br>
+          <button type="button" class="btn btn-success rt" onclick = "send_bank()">Done</button>
+        </div>
+
+        <!-- KD's code ends -->
+
+        <!-- <input type="file" accept="image/*" capture="camera">
+        <input type="file" accept="image/*"> -->
+
+        <div class="container cam-gallery">
+          <div class="row align-items-center justify-content-around">
+            <div class="col-4" id = "cam">
+              <label for="cam-hidden"><i class="fas fa-camera fa-2x"></i></label>
+              <input type="file" accept="image/*" capture="camera" id = "cam-hidden" oninput="cam_send()">
+            </div>
+            <div class="col-4" id = "gallery">
+              <label for="gallery-hidden"><i class="fas fa-images fa-2x"></i></label>
+              <input type="file" accept="image/*" id = "gallery-hidden" oninput="gallery_send()">
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class = footer>

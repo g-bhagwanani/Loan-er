@@ -96,8 +96,7 @@ function send_bank(){
   var acc = $("#acc-no")[0].value;
   var ifsc = $("#ifsc")[0].value;
   var name = $("#name")[0].value;
-  human_txt('Account No.: ' + acc);
-  human_txt('IFSC Code: ' + ifsc + '\n' + 'Account holder\'s name: ' + name);
+  human_txt('Account No.: ' + acc + '\n' + 'IFSC Code: ' + ifsc + '\n' + 'Account holder\'s name: ' + name);
   $('.bank-ip').hide();
   $('.send-box').show();
 }

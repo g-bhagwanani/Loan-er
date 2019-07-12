@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Aditya Birla Capital</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Buenard|Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--    required for basic layout-->
     <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
@@ -25,7 +29,7 @@
           <div class="row">
             <i class="fa fa-robot fa-lg col-3"></i>
             <div class="col-6">Loan-er</div>
-            <i class="fa fa-phone fa-lg col-3"></i>
+            <i class="fa fa-phone fa-lg col-3" onclick="call()"></i>
           </div>
         </div>
 
@@ -223,15 +227,22 @@
     </div>
     <!--    Vue - BotUI requires Vue to be present in page-->
     <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+
     <!--    BotUI - main file-->
     <script src="https://unpkg.com/botui/build/botui.min.js"></script>
 
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <script src="https://kit.fontawesome.com/42475ddb8f.js"></script>
+
     <script type="text/javascript" src=" {{ url_for('static', filename = 'js/chatpage.js')}}"></script>
+
 
 </body>
 </html>

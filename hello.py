@@ -187,6 +187,11 @@ def get_language_code(message):
         pass
     return language_code
 
+def calc_emi(amount, duration):
+    interest = duration - 2
+    from math import ceil
+    return ceil(amount*(1+interest/100)/duration)
+
 def upload_pic(pic_name):
     from firebase import firebase
     firebase = firebase.FirebaseApplication('https://cabot-xuhseu.firebaseio.com')
@@ -332,6 +337,22 @@ def myapi():
             latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
             fulfillment_msg[0]['text']['text'][0] = first_part+str(loaner)+latter_part
 
+<<<<<<< HEAD
+=======
+            pattern = re.compile(r'YY')
+            indices = [m.span() for m in re.finditer(pattern,fulfillment_msg[0]['text']['text'][0])]
+            indices = indices[0]
+            first_part = fulfillment_msg[0]['text']['text'][0][:indices[0]]
+            latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
+            fulfillment_msg[0]['text']['text'][0] = first_part+str(user_data['loan_duration'])+latter_part
+            pattern = re.compile(r'ZZZZ')
+            indices = [m.span() for m in re.finditer(pattern,fulfillment_msg[0]['text']['text'][0])]
+            indices = indices[0]
+            first_part = fulfillment_msg[0]['text']['text'][0][:indices[0]]
+            latter_part = fulfillment_msg[0]['text']['text'][0][indices[1]:]
+            fulfillment_msg[0]['text']['text'][0] = first_part+str(calc_emi(user_data['loan_amt'],user_data['loan_duration']))+latter_part
+
+>>>>>>> 9ecc5f809453d188a8cfc04c4c76a6a3cf9b93b0
         elif intent_name=='Loan approved - yes':
 
             pass
@@ -374,7 +395,11 @@ def sms_reply():
     #print("mediaurlx",mediaurlx)
     num_media = int(request.values.get("NumMedia"))
     for idx in range(num_media):
+<<<<<<< HEAD
         media_url = request.values.get('MediaUrl{}'.format(idx))
+=======
+        media_url = request.values.get(f'MediaUrl{idx}')
+>>>>>>> 9ecc5f809453d188a8cfc04c4c76a6a3cf9b93b0
         print("urls",media_url)
     print("msg",msg)
     print("phoneno",phoneno)

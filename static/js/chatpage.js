@@ -13,7 +13,7 @@ $(document).ready(function(){
   amount = 45000;
   $("#emi")[0].innerHTML = 'EMI: &#8377 ' + calc_emi(amount, 18);
   //trial
-  bot_txt('hey');
+  bot_txt('Type \'hey\' to chat with me in English, or \'नमस्ते\' for Hindi');
   //accept_or_deny();
   //cam_or_gallery();
   // duration();
@@ -101,6 +101,14 @@ function send_bank(){
   $('.send-box').show();
 }
 
+function get_number(){
+    $("#text-ip")[0].type = 'number';
+}
+
+function remove_number(){
+    $("#text-ip")[0].type = 'text';
+}
+
 //function to send msg from text-box
 $("#send-button").click(function(){
   var msg = $("#text-ip").val();
@@ -152,8 +160,11 @@ function send_to_server(msg, is_img=false){
                             console.log('25% completed :))');
                             progress();
                             break;
+                        case 'amount-1':
+                            get_number();
+                            break;
                         case 'loan period':
-                            //db call for amount
+                            // remove_number();
                             duration();
                             break;
                         case 'Aadhar number':

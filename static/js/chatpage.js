@@ -14,9 +14,9 @@ $(document).ready(function(){
   $("#emi")[0].innerHTML = 'EMI: &#8377 ' + calc_emi(amount, 18);
   //trial
   bot_txt('Type \'hey\' to chat with me in English, or \'नमस्ते\' for Hindi');
-  //accept_or_deny();
-  //cam_or_gallery();
-  // duration();
+
+  $(".human").addClass('animated', 'bounceInUp');
+
 });
 
 //bot messages
@@ -113,7 +113,61 @@ function remove_number(){
 $("#send-button").click(function(){
   var msg = $("#text-ip").val();
   $("#text-ip").val('');
-  human_txt(msg);
+
+  function pan_check(pan) {
+      if((pan).length!=10)
+          return false;
+      if !(pan.substring(0,3).isalpha())
+          return false;
+      if !(pan[3] in 'PFCHAT')
+          return false;
+      if (!pan.substring(5:9).isdigit())
+          return false;
+      if (!pan[9].isalpha())
+          return false;
+      return true;
+  }
+
+  function ifsc_check(ifsc) {
+    if(ifsc.length != 11)
+        return false
+    if(!ifsc.substring(0,4).isalpha())
+        return false;
+    else if(ifsc[4]!=0)
+        return false;
+    else if(!ifsc.substring(5,11).isnumeric())
+        return false;
+    return true;
+  }
+
+  if(ptr==7){
+      if(msg.length==12){
+          human_txt(msg);
+      }
+      else{
+        bot_txt('Please enter a valid Aadhar');
+      }
+  }
+  else if(ptr==2){
+      if(parseInt(msg)<25000 || parseInt(msg)>1500000){
+          bot_txt('Sorry, but we only provide loans in the range Rs 25000 to 15 lakhs, please re-enter your amount.');
+      }
+      else{
+          human_txt(msg);
+      }
+  }
+  else if(ptr==5){
+      if(!pan_check(msg)){
+          bot_txt('Please enter a valid PAN.');
+      }
+      else{
+          human_txt(msg);
+      }
+  }
+  else{
+      human_txt(msg);
+  }
+
 });
 
 function human_txt(msg){

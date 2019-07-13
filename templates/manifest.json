@@ -39,17 +39,17 @@
       "type": "image/png"
     },
     {
-      "src": "static/icons/icon-512-512.png",
+      "src": "../static/icons/icon-512-512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "static/icons/icon-152-152.png",
+      "src": "../static/icons/icon-152-152.png",
       "sizes": "152x152",
       "type": "image/png"
     },
     {
-      "src": "static/icons/icon-384-384.png",
+      "src": "../static/icons/icon-384-384.png",
       "sizes": "384x384",
       "type": "image/png"
     }

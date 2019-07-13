@@ -552,8 +552,16 @@ def sms_reply():
 
     print(stri)
     resp.message(stri)
-    # resp.message("Hello me")
+    # resp.message("Hello me") 
     return str(resp)
+
+@app.route('/sw.js', methods=['GET'])
+def sw():
+    return app.send_static_file('serviceworker.js')
+
+@app.route('/manifest.json', methods=['GET'])
+def manifest():
+    return app.send_static_file('manifest.json')
 
 
 if __name__ == '__main__':

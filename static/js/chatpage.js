@@ -117,13 +117,9 @@ $("#send-button").click(function(){
   function pan_check(pan) {
       if((pan).length!=10)
           return false;
-      if !(pan.substring(0,3).isalpha())
+      if ('PFCHAT'.indexOf(pan[3]) == -1)
           return false;
-      if !(pan[3] in 'PFCHAT')
-          return false;
-      if (!pan.substring(5:9).isdigit())
-          return false;
-      if (!pan[9].isalpha())
+      if (!($.isNumeric(pan.substring(5,9))))
           return false;
       return true;
   }
@@ -131,11 +127,9 @@ $("#send-button").click(function(){
   function ifsc_check(ifsc) {
     if(ifsc.length != 11)
         return false
-    if(!ifsc.substring(0,4).isalpha())
-        return false;
     else if(ifsc[4]!=0)
         return false;
-    else if(!ifsc.substring(5,11).isnumeric())
+    else if (!($.isNumeric(ifsc.substring(5,11))))
         return false;
     return true;
   }

@@ -28,9 +28,10 @@ def sendSMS():
     numbers = '91' + number
 
     #send no to db
-
+    print('SMS Sending')
     global otp
     #otp = str(random.randint(1000, 9999))
+    print(otp)
     otp = '4151'
     #send otp to the Number
     '''data =  urllib.parse.urlencode({'apikey': apikey, 'numbers': numbers,
@@ -38,8 +39,8 @@ def sendSMS():
     data = data.encode('utf-8')
     request = urllib.request.Request("https://api.textlocal.in/send/?")
     f = urllib.request.urlopen(request, data)
-    fr = f.read()'''
-    #console.log(fr)
+    fr = f.read()
+    print(fr)'''
     return redirect(url_for('get_otp'))
 
 #login page on startup
@@ -552,7 +553,7 @@ def sms_reply():
 
     print(stri)
     resp.message(stri)
-    # resp.message("Hello me") 
+    # resp.message("Hello me")
     return str(resp)
 
 @app.route('/sw.js', methods=['GET'])

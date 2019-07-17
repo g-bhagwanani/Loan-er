@@ -8,7 +8,7 @@ import smtplib
 from googletrans import Translator
 
 def pan_check(pan):
-    from hello import user_data
+    from run import user_data
     if len(pan)!=10:
         return False
     if not pan[:3].isalpha():
@@ -76,7 +76,7 @@ def convert_to_hi(fulfillment_msg):
     return fulfillment_msg
 
 # def get_language(message):
-#     from hello import isHindi
+#     from run import isHindi
 #     # global isHindi
 #     # if isHindi:
 #     #     return 'hi'

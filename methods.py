@@ -23,9 +23,10 @@ def pan_check(pan):
         return False
     return True
 
-def get_fulfillment_texts(message, project_id):
+def get_fulfillment_texts(message, project_id, session_id):
     session_client = dialogflow.SessionsClient()
-    session = session_client.session_path(project_id, "unique")
+    print('inside function, session_id',session_id)
+    session = session_client.session_path(project_id, session_id) #"unique"
     if message:
         text_input = dialogflow.types.TextInput(text=message,
                                                 language_code='en')
